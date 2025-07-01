@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Online Users</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group" id="user-list">
+                    {% for user in users %}
+                    <a href="#" class="list-group-item list-group-item-action user-item" data-user="{{ user }}">
+                        {{ user }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Chat with <span id="current-chat-user">Select a user</span></h5>
+            </div>
+            <div class="card-body chat-container">
+                <div class="chat-messages" id="chat-messages"></div>
+                <div class="chat-input mt-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="message-input" placeholder="Type a message..." disabled>
+                        <button class="btn btn-primary" id="send-button" disabled>Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/chat.js"></script>
+{% endblock %}

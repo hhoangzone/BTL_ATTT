@@ -1,0 +1,104 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.chat-container {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.message {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.sent-message {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+    margin-left: 20%;
+}
+
+.received-message {
+    background-color: #f8d7da;
+    align-self: flex-start;
+    margin-right: 20%;
+}
+
+.received-message.pending {
+    background-color: #e2e3e5;
+    color: #555;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.system-message {
+    background-color: #e2e3e5;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    text-align: center;
+}
+
+#user-list .list-group-item {
+    cursor: pointer;
+    position: relative;
+}
+
+#user-list .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+#user-list .list-group-item.has-new-message {
+    background-color: #fff3cd;
+}
+
+.new-message-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red;
+    font-size: 10px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+#message-input {
+    border-radius: 20px 0 0 20px;
+}
+
+#send-button {
+    border-radius: 0 20px 20px 0;
+}
